@@ -1,3 +1,7 @@
+"""autor: MIGUEL ECHEVERRIA CABALLERO
+ grupo: 213022_134
+ programa: INGENIERIA DE SISTEMA
+ codigo fuente: autoría propia"""
 # ==============================
 # MENÚ DE RESTAURANTE
 # ==============================
