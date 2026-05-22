@@ -14,6 +14,8 @@ menu = [
     ["Jugo Natural", "Bebidas", 4500]
 ]
 
+UMBRAL_PROMOCION = 10000  # umbral fijo para aplicar el descuento
+
 # =========================================
 # FUNCIÓN PARA CALCULAR EL PRECIO FINAL
 # =========================================
@@ -61,21 +63,14 @@ def solicitar_datos_promocion(menu):
             print("Categoría no válida. Elija una de las categorías mostradas arriba.")
             categoria_objetivo = ""
 
-    while True:
-        try:
-            umbral = float(input("Ingrese el umbral de precio para aplicar el descuento: "))
-            break
-        except ValueError:
-            print("Valor inválido. Ingrese un número para el umbral.")
-
-    return categoria_objetivo, umbral
+    return categoria_objetivo
 
 
 # =========================================
 # CONFIGURACIÓN DE LA PROMOCIÓN (DATOS SOLICITADOS)
 # =========================================
 
-categoria_objetivo, umbral = solicitar_datos_promocion(menu)
+categoria_objetivo = solicitar_datos_promocion(menu)
 
 
 # =========================================
@@ -89,7 +84,7 @@ for producto in menu:
     precio_final = calcular_precio_final(
         producto,
         categoria_objetivo,
-        umbral
+        UMBRAL_PROMOCION
     )
 
     print("Producto:", producto[0])
